@@ -45,18 +45,18 @@ namespace API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPIv5", Version = "v1" });
             });
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-            .AddJwtBearer(options => 
-            {
-                options.TokenValidationParameters=new TokenValidationParameters
-                {
-                    ValidateIssuerSigningKey=true,
-                    IssuerSigningKey=new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["TOkenKey"])),
-                    ValidateIssuer=false,
-                    ValidateAudience=false,
+            // services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            // .AddJwtBearer(options => 
+            // {
+            //     options.TokenValidationParameters=new TokenValidationParameters
+            //     {
+            //         ValidateIssuerSigningKey=true,
+            //         IssuerSigningKey=new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["TOkenKey"])),
+            //         ValidateIssuer=false,
+            //         ValidateAudience=false,
 
-                };
-            });
+            //     };
+            // });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
