@@ -21,9 +21,7 @@ export class AccountService {
           this.currentUserSource.next(user);
         }
 
-      }
-
-      )
+      })
     ) 
   }
 
@@ -36,14 +34,9 @@ export class AccountService {
           this.currentUserSource.next(user);
         }
            
-      }
-      
-
-      )
+      })
     ) 
   }
-
-
 
   setCurrentUser(user: User){
     this.currentUserSource.next(user);
