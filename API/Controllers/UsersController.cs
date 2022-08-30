@@ -14,6 +14,7 @@ using Microsoft.EntityFrameworkCore;
 namespace API.Controllers
 {
     [Authorize]
+    [AllowAnonymous]
     public class UsersController : BaseApiController
     {
         private readonly IUserRepository _userRepository;
