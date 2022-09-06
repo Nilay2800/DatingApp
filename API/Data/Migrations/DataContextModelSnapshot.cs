@@ -5,8 +5,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-#nullable disable
-
 namespace API.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
@@ -15,7 +13,8 @@ namespace API.Data.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "6.0.8");
+            modelBuilder
+                .HasAnnotation("ProductVersion", "5.0.17");
 
             modelBuilder.Entity("API.Entities.AppUser", b =>
                 {

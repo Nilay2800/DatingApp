@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using API.Entities;
 using API.Interfaces;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
 namespace API.Services
