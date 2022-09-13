@@ -3,7 +3,10 @@
         <div *ngIf="messages?.length === 0">
             No messages yet...
         </div>
-        <ul *ngIf="messages?.length" class="chat">
+        <ul #scrollMe
+            style="overflow:scroll ;height: 500px;"
+            [scrollTop]="scrollMe.scrollHeight"
+            *ngIf="messages?.length" class="chat">
             <li *ngFor="let message of messages">
                 <div>
                     <span class="chat-img float-right">
