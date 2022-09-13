@@ -42,7 +42,7 @@ namespace API.Data
                              && m.RecipientDeleted==false
                              && m.Sender.UserName==recipientUsername
                              || m.Recipient.UserName==recipientUsername
-                             && m.Sender.UserName==currentUsername && m.SenderDeleted==false
+                             && m.Sender.UserName==currentUsername && m.SenderDeleted==false 
                         )
                         .OrderBy(m=>m.MessageSent)
                         .ToListAsync();
@@ -63,7 +63,10 @@ namespace API.Data
 
         public async Task<Message> GetMessage(int id)
         {
-            return await _context.Message.FindAsync(id);
+            return await _context.Message
+                        .Include(u=>u.Sender)
+                        .Include(u=>u.Recipient)
+                        .SingleOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task<pagedList<MessageDto>> GetMessagesForUser(MessageParams messageParams)
